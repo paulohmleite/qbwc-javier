@@ -1,0 +1,1 @@
+Define in .env the time for sync the orders and the rest of the data.

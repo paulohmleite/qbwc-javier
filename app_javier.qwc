@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<QBWCXML>
+    <AppName>My QuickBooks Integration v2</AppName>
+    <AppID>javier</AppID>
+    <AppURL>http://localhost:8001/soap</AppURL>
+    <CertURL>http://localhost:8001</CertURL>
+    <AppDescription>Integration</AppDescription>
+    <AppSupport>http://localhost:8001/</AppSupport>
+    <UserName>Admin</UserName>
+    <OwnerID>{57F3B9B2-16F3-4FCC-B1FF-967DE1813D20}</OwnerID>
+    <FileID>{90A44FB5-13D2-4815-AC85-BC87A7E7D1EB}</FileID>
+    <QBType>QBFS</QBType>
+    <IsReadOnly>false</IsReadOnly>
+</QBWCXML>

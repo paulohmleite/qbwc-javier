@@ -1,0 +1,10 @@
+node_modules
+dist
+coverage
+venv
+.vscode
+__pycache__
+*.pyc
+data/*
+.env
+venv/

@@ -1,0 +1,17 @@
+async-timeout==4.0.3
+configobj==5.0.8
+lxml==5.1.0
+pytz==2023.3.post1
+redis==5.0.1
+six==1.16.0
+spyne==2.14.0
+waitress==2.1.2
+walrus==0.9.3
+requests
+flask
+jsonify
+werkzeug
+PyJWT==2.8.0
+gunicorn==21.2.0
+python-dotenv
+Pillow

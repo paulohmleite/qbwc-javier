@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickBooks Actions</title>
+
+    <!-- Bootswatch Lux Theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.0/dist/lux/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 600px;
+            margin-top: 50px;
+        }
+
+        #response {
+            white-space: pre-wrap;
+            background: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container text-center">
+    <h2 class="mb-4">QuickBooks Actions</h2>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <label for="qb-action" class="form-label fw-bold">Select an action:</label>
+            <select id="qb-action" class="form-select mb-3">
+                <option value="sync_all">SYNC ALL</option>
+                <option value="sync_invoices">SYNC INVOICES</option>
+                <option value="sync_customers">SYNC CUSTOMERS</option>
+                <option value="sync_inventory">SYNC INVENTORY ITEMS</option>
+                <option value="sync_stock_sites">SYNC STOCK SITES</option>
+                <option value="sync_orders">SYNC ORDERS</option>
+                <option value="sync_price_level">SYNC PRICE LEVEL</option>
+            </select>
+            <button id="send-request" class="btn btn-primary w-100">
+                <i class="bi bi-send"></i> Send Request
+            </button>
+        </div>
+    </div>
+
+    <h3 class="mt-4">Response:</h3>
+    <pre id="response" class="border p-3"></pre>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#send-request").click(function () {
+            var action = $("#qb-action").val();
+
+            // se for sync_orders, retornar alerta em construcao
+
+            $.ajax({
+                url: "/send-request",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify({"action": action}),
+                success: function (response) {
+                    $("#response").text("✅ Success:\n" + JSON.stringify(response, null, 2));
+                },
+                error: function (xhr) {
+                    $("#response").text("❌ Error:\n" + xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
