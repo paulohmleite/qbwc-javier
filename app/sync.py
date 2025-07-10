@@ -35,6 +35,7 @@ def sync_new_orders():
                     logging.info("🔄 Synchronizing new orders...")
                     logging.info(f"🔍 Found {len(data)} new orders to synchronize.")
                     for body in data:
+                        print(body)
                         if not all(k in body for k in ["orderId", "customerName", "items", "totalAmount"]):
                             print(f"⚠️ Incomplete order: {body}")
                             continue

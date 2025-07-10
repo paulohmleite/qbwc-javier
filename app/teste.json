@@ -1,10 +1,10 @@
 [
   {
-    "orderId": "ORDER-0013",
-    "CustomerName": "Kern Lighting Warehouse",
+    "orderId": "ORDER-001234",
+    "customerName": "Kern Lighting Warehouse",
     "items": [
       {
-        "productid": "5030-04-02",
+        "productid": "P3335-30",
         "description": "Produto A",
         "quantity": 2,
         "unitPrice": 50.00
